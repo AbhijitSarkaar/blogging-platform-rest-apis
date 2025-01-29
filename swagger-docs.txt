@@ -1,0 +1,3 @@
+
+
+swagger.js at root level worked 
