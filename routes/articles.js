@@ -1,18 +1,19 @@
-const express = require("express");
-const router = express.Router();
+const { createArticle } = require("../controllers/articleController");
 
-/**
- * @openapi
- *
- * /v1/articles:
- *  get:
- *     description: Responds if the app is up and running
- *     responses:
- *       200:
- *         description: App is up and running
- */
-router.get("/v1/articles", (req, res) => {
-  res.send("articles");
-});
+module.exports = (app) => {
+  /**
+   * @openapi
+   *
+   * /v1/articles:
+   *  get:
+   *     description: Responds if the app is up and running
+   *     responses:
+   *       200:
+   *         description: App is up and running
+   */
+  app.get("/v1/articles", (req, res) => {
+    res.send("articles");
+  });
 
-module.exports = router;
+  app.post("/v1/articles", createArticle);
+};
