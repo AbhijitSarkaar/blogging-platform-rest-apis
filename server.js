@@ -13,6 +13,8 @@ app.use(express.json());
 //routes
 require("./routes/articles")(app);
 
-app.listen(process.env.PORT, () => {
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
   swaggerDocs(app);
 });
