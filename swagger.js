@@ -16,17 +16,13 @@ const options = {
       },
     ],
   },
-  apis: ["./routes/articles.js"],
+  apis: ["./routes/articles.js", "./models/Article.js"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
 
 const swaggerDocs = (app) => {
   app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  app.get("/docs.json", (req, res) => {
-    res.setHeader("Content-Type", "application/json");
-    res.send(swaggerSpec);
-  });
 };
 
 module.exports = swaggerDocs;
