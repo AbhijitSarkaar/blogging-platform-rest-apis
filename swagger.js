@@ -12,7 +12,11 @@ const options = {
     servers: [
       {
         url: "http://localhost:5000",
-        description: "local server",
+        description: "Development server",
+      },
+      {
+        url: "https://blogging-platform-rest-apis.onrender.com",
+        description: "Production server",
       },
     ],
   },
